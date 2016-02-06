@@ -68,19 +68,43 @@ public class Applet extends JApplet implements ActionListener, BattleArenaDelega
 
     }
 
-    public void monsterWasKilled(PickleMonster monster) {
+    @Override
+    public void opponentAttacked(int damage) {
 
     }
 
-    public void monsterRanAway(PickleMonster monster) {
+    @Override
+    public void opponentUsedPotion(int heal) {
 
     }
 
-    public void monsterUsedPotion(PickleMonster monster, int heal) {
+    @Override
+    public void opponentRanAway() {
 
     }
 
-    public void monsterAttacked(PickleMonster monster, int damage) {
+    @Override
+    public void opponentWasKilled() {
+
+    }
+
+    @Override
+    public void playerAttacked(int damage) {
+
+    }
+
+    @Override
+    public void playerUsedPotion(int heal) {
+
+    }
+
+    @Override
+    public void playerRanAway() {
+
+    }
+
+    @Override
+    public void playerWasKilled() {
 
     }
 

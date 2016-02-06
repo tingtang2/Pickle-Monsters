@@ -7,9 +7,16 @@ import src.PickleMonsters.PickleMonster;
  */
 public interface BattleArenaDelegate {
 
-    void monsterWasKilled(PickleMonster monster);
-    void monsterRanAway(PickleMonster monster);
-    void monsterUsedPotion(PickleMonster monster, int heal);
-    void monsterAttacked(PickleMonster monster, int damage);
+    void playerWasKilled();
+    void opponentWasKilled();
+
+    void playerRanAway();
+    void opponentRanAway();
+
+    void playerUsedPotion(int heal);
+    void opponentUsedPotion(int heal);
+
+    void playerAttacked(int damage);
+    void opponentAttacked(int damage);
 
 }

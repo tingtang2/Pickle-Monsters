@@ -22,10 +22,10 @@ public class BattleArena {
 
     public void runAway() {
         if (random.nextBoolean()) {
-            delegate.monsterRanAway(player);
+            delegate.playerRanAway();
         } else {
             player.kill();
-            delegate.monsterWasKilled(player);
+            delegate.playerWasKilled();
         }
     }
 
