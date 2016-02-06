@@ -9,24 +9,26 @@ import java.util.Random;
 public class Applet extends JApplet implements ActionListener {
 
     Random random = new Random();
-    JRadioButton run, attack, potion;
+    JRadioButton runButton, attackButton, potionButton;
+
+    BattleArena arena;
 
     public void init() {
         JPanel buttons = new JPanel();
         buttons.setLayout(new GridLayout(2, 2));
 
-        run = new JRadioButton("Run");
-        attack = new JRadioButton("Attack");
-        potion = new JRadioButton("Potion");
+        runButton = new JRadioButton("Run");
+        attackButton = new JRadioButton("Attack");
+        potionButton = new JRadioButton("Potion");
 
         ButtonGroup buttonGroup = new ButtonGroup();
-        buttonGroup.add(run);
-        buttonGroup.add(attack);
-        buttonGroup.add(potion);
+        buttonGroup.add(runButton);
+        buttonGroup.add(attackButton);
+        buttonGroup.add(potionButton);
 
-        buttons.add(run);
-        buttons.add(attack);
-        buttons.add(potion);
+        buttons.add(runButton);
+        buttons.add(attackButton);
+        buttons.add(potionButton);
 
         JPanel battle = new JPanel();
 
@@ -38,14 +40,20 @@ public class Applet extends JApplet implements ActionListener {
         startAction.addActionListener(this);
 
         c.add(startAction, BorderLayout.SOUTH);
+
+        configureArena();
+    }
+
+    public void configureArena() {
+        arena = null;
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (run.isSelected()) {
+        if (runButton.isSelected()) {
             run();
-        } else if (attack.isSelected()) {
+        } else if (attackButton.isSelected()) {
             attack();
-        } else if (potion.isSelected()) {
+        } else if (potionButton.isSelected()) {
             usePotion();
         } else {
             System.out.println("Unimplemented button selected");

@@ -24,4 +24,6 @@ public abstract class PickleMonster {
     public String getName(){
         return name;
     }
+
+    abstract public void kill();
 }
