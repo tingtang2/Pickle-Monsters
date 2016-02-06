@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class BattleArena {
 
-    PickleMonster player, opponent;
+    public PickleMonster player, opponent;
     Random random;
     BattleArenaDelegate delegate;
 
@@ -55,7 +55,7 @@ public class BattleArena {
         }
         else
         {
-
+            //do nothing
         }
     }
 
@@ -65,6 +65,10 @@ public class BattleArena {
             Random rand = new Random();
             int r = rand.nextInt(100);
             opponent.usePotion(r);
+        }
+        else
+        {
+            //do nothing
         }
     }
     public void playerWasKilled(){

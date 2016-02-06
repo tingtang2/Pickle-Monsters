@@ -99,12 +99,13 @@ public class Applet extends JApplet implements ActionListener, BattleArenaDelega
 
     @Override
     public void playerAttacked(int damage) {
-
+        JOptionPane.showMessageDialog(null, "You took " + damage + " damage");
+        int percent = damage / arena.player.getHealth();
     }
 
     @Override
     public void playerUsedPotion(int heal) {
-
+        JOptionPane.showMessageDialog(null, "You healed for " + heal + " points!");
     }
 
     @Override
