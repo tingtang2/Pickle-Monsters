@@ -74,6 +74,7 @@ public class Applet extends JApplet implements ActionListener, BattleArenaDelega
     @Override
     public void opponentAttacked(int damage) {
 
+
     }
 
     @Override

@@ -33,6 +33,7 @@ public abstract class PickleMonster {
         health = 0;
     }
 
+    public void usePotion(int heal){health += heal;}
     public void dealDamage(int damage) {
         health -= damage;
     }
