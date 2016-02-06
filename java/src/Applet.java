@@ -1,12 +1,14 @@
 package src;
 
+import src.PickleMonsters.PickleMonster;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-public class Applet extends JApplet implements ActionListener {
+public class Applet extends JApplet implements ActionListener, BattleArenaDelegate {
 
     Random random = new Random();
     JRadioButton runButton, attackButton, potionButton;
@@ -50,25 +52,35 @@ public class Applet extends JApplet implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (runButton.isSelected()) {
-            run();
+            arena.runAway();
         } else if (attackButton.isSelected()) {
-            attack();
+            arena.playerAttacked();
+            moveOpponent();
         } else if (potionButton.isSelected()) {
-            usePotion();
+            arena.playerUsedPotion();
+            moveOpponent();
         } else {
             System.out.println("Unimplemented button selected");
         }
     }
 
-    public void run() {
+    public void moveOpponent() {
 
     }
 
-    public void attack() {
+    public void monsterWasKilled(PickleMonster monster) {
 
     }
 
-    public void usePotion() {
+    public void monsterRanAway(PickleMonster monster) {
+
+    }
+
+    public void monsterUsedPotion(PickleMonster monster, int heal) {
+
+    }
+
+    public void monsterAttacked(PickleMonster monster, int damage) {
 
     }
 

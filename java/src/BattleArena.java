@@ -28,4 +28,20 @@ public class BattleArena {
             delegate.monsterWasKilled(player);
         }
     }
+
+    public void playerAttacked() {
+
+    }
+
+    public void opponentAttacked() {
+
+    }
+
+    public void playerUsedPotion() {
+
+    }
+
+    public void opponentUsedPotion() {
+
+    }
 }
