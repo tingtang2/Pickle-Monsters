@@ -1,16 +1,21 @@
-package src;
 
-import src.PickleMonsters.PickleMonster;
 
+
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 import java.util.Random;
 
 public class Applet extends JApplet implements ActionListener, BattleArenaDelegate {
 
     JRadioButton runButton, attackButton, potionButton;
+    Image player, oppo;
 
     BattleArena arena;
 
@@ -31,11 +36,12 @@ public class Applet extends JApplet implements ActionListener, BattleArenaDelega
         buttons.add(attackButton);
         buttons.add(potionButton);
 
-        JPanel battle = new JPanel();
+        JPanel battle = new JPanel(new GridLayout(1, 1));
+
 
         Container c = getContentPane();
         c.add(buttons, BorderLayout.NORTH);
-        c.add(battle);
+        c.add(battle, BorderLayout.CENTER);
 
         JButton startAction = new JButton("Perform Action");
         startAction.addActionListener(this);
@@ -67,8 +73,9 @@ public class Applet extends JApplet implements ActionListener, BattleArenaDelega
         Random random = new Random();
 
         if (random.nextInt(arena.opponent.getMaxHealth()) < arena.opponent.getHealth()) {
-            arena.opponent.
-        }
+            arena.opponent.usePotion(50);}
+        else
+            arena.opponent.dealDamage(50);
     }
 
     @Override
@@ -104,12 +111,28 @@ public class Applet extends JApplet implements ActionListener, BattleArenaDelega
 
     @Override
     public void playerRanAway() {
-
+        JOptionPane.showMessageDialog(null, "You win!!");
     }
 
     @Override
     public void playerWasKilled() {
+        JOptionPane.showMessageDialog(null, "You have been killed :(");
+    }
 
+    public void paint(Graphics g) {
+        super.paint(g);
+
+        g.setColor(Color.GREEN);
+        player = getImage(getCodeBase(), "PickleTwo.gif");
+        oppo = getImage(getCodeBase(), "BlastPickle.gif");
+        g.drawImage(player, 50, 50, this);
+        g.drawImage(oppo, 1000, 50, this);
+        g.fill3DRect(50, 125, 400, 30, true);
+        g.fill3DRect(1000, 125, 400, 30, true);
+        g.setColor(Color.BLUE);
+        g.drawString("HP:",50, 100);
+        g.drawString("HP:",1000, 100);
     }
 
 }
+

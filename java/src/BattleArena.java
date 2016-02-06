@@ -1,9 +1,8 @@
-package src;
 
-import com.sun.istack.internal.NotNull;
-import src.PickleMonsters.PickleMonster;
 
-import javax.swing.*;
+//import com.sun.istack.internal.NotNull;
+//import src.PickleMonsters.PickleMonster;
+
 import java.util.Random;
 
 public class BattleArena {
@@ -55,9 +54,9 @@ public class BattleArena {
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "You have no potions left");
+            //JOptionPane.showMessageDialog(null, "You have no potions left");
         }
-        JOptionPane.showMessageDialog(null, "You now have " + player.getNumPotions() + "potions left");
+        //JOptionPane.showMessageDialog(null, "You now have " + player.getNumPotions() + "potions left");
     }
 
     public void opponentUsedPotion() {
@@ -69,9 +68,9 @@ public class BattleArena {
         }
     }
     public void playerWasKilled(){
-        JOptionPane.showMessageDialog(null, "You have been killed :(");
+        //JOptionPane.showMessageDialog(null, "You have been killed :(");
     }
     public void opponentWasKilled(){
-        JOptionPane.showMessageDialog(null, "You win!!");
+        //JOptionPane.showMessageDialog(null, "You win!!");
     }
 }
