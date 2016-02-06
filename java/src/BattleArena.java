@@ -29,6 +29,14 @@ public class BattleArena {
         }
     }
 
+    public PickleMonster getPlayer() {
+        return player;
+    }
+
+    public PickleMonster getOpponent() {
+        return opponent;
+    }
+
     public void playerAttacked() {
         opponent.setHealth(player.getAttackDamage());
     }
