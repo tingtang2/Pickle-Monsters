@@ -4,7 +4,6 @@ public abstract class PickleMonster {
 
     String name;
     private int health, maxHealth, attackDamage, numPotions;
-
     public PickleMonster(int h, int ap, int np, String n) {
         this.health = h;
         this.maxHealth = h;
