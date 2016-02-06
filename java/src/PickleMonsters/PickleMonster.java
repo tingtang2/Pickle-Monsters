@@ -24,6 +24,6 @@ public abstract class PickleMonster {
     public String getName(){
         return name;
     }
-
+    public void setHealth(int damage){health -= damage;}
     abstract public void kill();
 }

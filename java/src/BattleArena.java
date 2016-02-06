@@ -30,15 +30,17 @@ public class BattleArena {
     }
 
     public void playerAttacked() {
-
+        opponent.setHealth(player.getAttackDamage());
     }
 
     public void opponentAttacked() {
 
     }
 
-    public void playerUsedPotion() {
-
+    public void UsedPotion() {
+        Random rand = new Random();
+        rand = rand.nextInt() * -1;
+        player.setHealth(rand);
     }
 
     public void opponentUsedPotion() {
