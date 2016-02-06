@@ -10,7 +10,6 @@ import java.util.Random;
 
 public class Applet extends JApplet implements ActionListener, BattleArenaDelegate {
 
-    Random random = new Random();
     JRadioButton runButton, attackButton, potionButton;
 
     BattleArena arena;
@@ -65,7 +64,11 @@ public class Applet extends JApplet implements ActionListener, BattleArenaDelega
     }
 
     public void moveOpponent() {
+        Random random = new Random();
 
+        if (random.nextInt(arena.opponent.getMaxHealth()) < arena.opponent.getHealth()) {
+            arena.opponent.
+        }
     }
 
     @Override

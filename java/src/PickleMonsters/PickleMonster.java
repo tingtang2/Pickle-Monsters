@@ -1,28 +1,23 @@
 package src.PickleMonsters;
-import src.CoordinateSystem;
-
-import java.awt.Image;
-import java.awt.Graphics;
-import java.util.*;
 
 public abstract class PickleMonster {
 
     String name;
-    private int health, attackDamage, numPotions;
-    Image pic;
-    CoordinateSystem coordinates;
+    private int health, maxHealth, attackDamage, numPotions;
 
-    public PickleMonster(int h, int ap, int np, String n, Image p, int x, int y) {
+    public PickleMonster(int h, int ap, int np, String n) {
         this.health = h;
+        this.maxHealth = h;
         this.attackDamage = ap;
         this.numPotions = np;
         this.name = n;
-        this.pic = p;
-        coordinates = new CoordinateSystem(x, y, p);
     }
 
     public int getHealth(){
         return health;
+    }
+    public int getMaxHealth() {
+        return maxHealth;
     }
     public int getAttackDamage(){
         return attackDamage;
@@ -33,10 +28,15 @@ public abstract class PickleMonster {
     public String getName(){
         return name;
     }
-    public void draw(Graphics g)
-    {
-        coordinates.drawImage(g, pic);
+
+    public void kill() {
+        health = 0;
     }
 
-    abstract public void kill();
+    public void dealDamage(int damage) {
+        health -= damage;
+    }
+    public boolean hasDied() {
+        return health <= 0;
+    }
 }
