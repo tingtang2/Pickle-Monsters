@@ -74,7 +74,7 @@ public class Applet extends JApplet implements ActionListener, BattleArenaDelega
     public void moveOpponent() {
         Random random = new Random();
 
-        if (random.nextInt(arena.opponent.getMaxHealth()) < arena.opponent.getHealth()) {
+        if (random.nextInt(arena.opponent.getMaxHealth()) < arena.opponent.getHealth() / 4) {
             arena.opponent.usePotion(50);}
         else
             arena.opponent.dealDamage(50);
@@ -98,9 +98,11 @@ public class Applet extends JApplet implements ActionListener, BattleArenaDelega
     }
 
     @Override
-    public void playerAttacked(int damage) {
+    public int playerAttacked(int damage) {
         JOptionPane.showMessageDialog(null, "You took " + damage + " damage");
         int percent = damage / arena.player.getHealth();
+        int length = arena.player.getHealth() * percent;
+        return length
     }
 
     @Override
