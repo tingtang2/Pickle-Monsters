@@ -2,6 +2,8 @@
 
 
 
+import src.BattleArenaDelegate;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -89,10 +91,6 @@ public class Applet extends JApplet implements ActionListener, BattleArenaDelega
 
     }
 
-    @Override
-    public void opponentRanAway() {
-
-    }
 
     @Override
     public void opponentWasKilled() {
