@@ -11,7 +11,6 @@ public interface BattleArenaDelegate {
     void opponentWasKilled();
 
     void playerRanAway();
-    void opponentRanAway();
 
     void playerUsedPotion(int heal);
     void opponentUsedPotion(int heal);
